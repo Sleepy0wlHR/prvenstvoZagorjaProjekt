@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-    <?php
+    <?php 
     include 'connect.php';
-        echo'<header>
+        echo '<header>
             <div name="headerSlike" id="headerSlike">
                 <ul name="listaSlike" id="listaSlike">
                     <li><img class="hSlike" src="img/mx1.jpg"></li>
@@ -24,7 +24,7 @@
             </div>
             <nav>
                 <ul name="navBar" id="navBar">
-                    <li><a class="currentOne" href="index.php">POČETNA</a></li>
+                    <li><a href="index.php">POČETNA</a></li>
                     <li><a href="utrke.php">UTRKE</a></li>
                     <li><a href="rezultati.php">REZULTATI</a></li>
                 </ul>
@@ -35,25 +35,21 @@
             </nav>
         </header>
         <main>
-            <h1>Dobrodošli!</h1>
-            <h2>Uputstvo za korištenje:</h2>
-            <p>
-                Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
-                stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
-                da istu prijavite na mail: ivan.sovec.1@gmail.com
-                Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
-                stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
-                da istu prijavite na mail: ivan.sovec.1@gmail.com
-                Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
-                stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
-                da istu prijavite na mail: ivan.sovec.1@gmail.com
-                Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
-                stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
-                da istu prijavite na mail: ivan.sovec.1@gmail.com
-                Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
-                stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
-                da istu prijavite na mail: ivan.sovec.1@gmail.com
-            </p>
+            <h1> Prijava korisnika </h1>
+            <form name="login" action="logincheck.php" method="POST">
+                <div class="form-item">
+                    <label for="username">Korisničko ime:</label><br>
+                    <input type="text" name="username" id="username" class="textfield">
+                </div>
+                <div class="form-item">
+                    <label for="password1">Lozinka:</label><br>
+                    <input type="password" name="password1" id="password1" class="textfield">
+                </div>
+                <div class="form-item" id="buttoni">
+                    <button type="submit" value="Prijava" id="slanje">Prijava</button>
+                    <button type="reset" value="Poništi" id="ponisti">Poništi</button>
+                </div>
+            </form>
         </main>
         <footer>
             <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1</h6>

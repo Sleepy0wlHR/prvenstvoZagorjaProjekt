@@ -10,7 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-    <?php 
+    <?php
+    include 'connect.php'; 
         echo '<header>
             <div name="headerSlike" id="headerSlike">
                 <ul name="listaSlike" id="listaSlike">
@@ -22,10 +23,15 @@
                 </ul>
             </div>
             <nav>
-                <ul name="navBar"id="navBar">
+                <ul name="navBar" id="navBar">
                     <li><a href="index.php">POČETNA</a></li>
-                    <li><a href="prijave.php">PRIJAVE</a></li>
+                    <li><a href="utrke.php">UTRKE</a></li>
+                    <li><a class="currentOne" href="rezultati.php">REZULTATI</a></li>
                 </ul>
+                <div name="logreg" id="logreg">
+                    <h5><a href="prijava.php">Prijava</a></h5>
+                    <h5><a href="registracija.php">Registracija</a></h5>
+                </div>
             </nav>
         </header>
         <main>
@@ -33,11 +39,6 @@
         </main>
         <footer>
             <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1</h6>
-            <p>
-                Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
-                stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
-                da istu prijavite na mail: ivan.sovec.1@gmail.com
-            </p>
         </footer>'
     ?>
     </body>
