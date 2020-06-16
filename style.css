@@ -140,4 +140,12 @@ form input {
     padding: 0 6px;
     box-sizing: border-box;
 }
-    
+input[type="checkbox"]
+{
+    vertical-align:middle;
+}
+#checkboxes li{
+    width:200px;
+    display: block;
+    float: left;
+}

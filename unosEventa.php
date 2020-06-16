@@ -11,7 +11,7 @@
         <script type="text/javascript" src="jquery-1.11.0.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-        <script src="regValidation.js"></script> 
+        <script src=""></script> 
     </head>
     <body>
     <?php 
@@ -39,46 +39,36 @@
             </nav>
         </header>
         <main>
-            <h1> Registracija novog korisnika </h1>
-            <form name="reg" action="reghandle.php" method="POST">
+            <h1> Unos novog eventa </h1>
+            <form name="newevent" action="eventhandle.php" method="POST">
             <div class="form-item">
-                <label for="ime">Ime:</label><br>
-                <input type="text" name="ime" id="ime" class="textfield">
+                <label for="datumEvent">Datum eventa:</label><br>
+                <input type="date" name="datumEvent" id="datumEvent">
             </div>
             <div class="form-item">
-                <label for="prezime">Prezime:</label><br>
-                <input type="text" name="prezime" id="prezime" class="textfield">
+                <label for="mjesto">Mjesto održavanja:</label><br>
+                <select name="mjesto" id="mjesto">
+                <option value="" disabled selected>Odaberi mjesto</option>';
+                $query = "SELECT * FROM mjesto";
+                $result = mysqli_query($dbc, $query);
+                while($row = mysqli_fetch_array($result)) {
+                    echo'<option value="'.$row['idMjesto'].'">'.$row['mjesto'].'</option>';
+                }
+                echo'</select>
             </div>
-            <div class="form-item">
-                <label for="email">E-mail:</label><br>
-                <input type="email" name="email" id="email" class="textfield">
-            </div>
-            <div class="form-item">
-                <label for="datumRod">Datum rođenja:</label><br>
-                <input type="date" name="datumRod" id="datumRod">
-            </div>
-            <div class="form-item">
-                <label for="spol">Spol:</label><br>
-                <select name="spol" id="spol">
-                    <option value="" disabled selected>Odaberi spol</option>
-                    <option value="m">Muško</option>
-                    <option value="z">Žensko</option>
-                </select>
-            </div>
-            <div class="form-item">
-                <label for="username">Korisničko ime:</label><br>
-                <input type="text" name="username" id="username" class="textfield">
-            </div>
-            <div class="form-item">
-                <label for="password1">Lozinka:</label><br>
-                <input type="password" name="password1" id="password1" class="textfield">
-            </div>
-            <div class="form-item">
-                <label for="password2">Ponovite lozinku:</label><br>
-                <input type="password" name="password2" id="password2" class="textfield">
-            </div>
+            <label>Odaberite klase za event:</label>
+            <ul id="checkboxes">';
+                $query2 = "SELECT * FROM klasa";
+                $result2 = mysqli_query($dbc, $query2);
+                while($row = mysqli_fetch_array($result2)) {
+                    echo'<li>
+                        <input type="checkbox" id="'.$row['idKlasa'].'" name="'.$row['idKlasa'].'" value="'.$row['idKlasa'].'">
+                        <label for="'.$row['idKlasa'].'">'.$row['naziv'].'</label>
+                        </li>';
+                }
+            echo'</ul><br>
             <div class="form-item" id="buttoni">
-                <button type="submit" value="Registracija" id="slanje">Registracija</button>
+                <button type="submit" value="Stvori" id="slanje">Stvori event</button>
                 <button type="reset" value="Poništi" id="ponisti">Poništi</button>
             </div>
         </form>

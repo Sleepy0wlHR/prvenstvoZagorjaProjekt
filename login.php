@@ -29,7 +29,7 @@
                     <li><a href="rezultati.php">REZULTATI</a></li>
                 </ul>
                 <div name="logreg" id="logreg">
-                    <h5><a href="prijava.php">Prijava</a></h5>
+                    <h5><a href="login.php">Prijava</a></h5>
                     <h5><a href="registracija.php">Registracija</a></h5>
                 </div>
             </nav>
