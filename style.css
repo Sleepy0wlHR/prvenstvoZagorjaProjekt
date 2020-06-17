@@ -42,6 +42,8 @@ ul{
     float: left;
     padding: 10px;
     width:55px;
+    color: white;
+    overflow: hidden;
 }
 li{
     float:left;
@@ -91,6 +93,12 @@ footer{
 h1{
     color: rgb(100, 100, 100);
     text-align: center;
+}
+h2{
+    margin-top:20px;
+    margin-left:30px;
+    color: orangered;
+    width:300px;
 }
 h6{
     font-size: 18px;
@@ -148,4 +156,111 @@ input[type="checkbox"]
     width:200px;
     display: block;
     float: left;
+}
+.uimg{
+    height:98px;
+    width:98px;
+    position: relative;
+    top:0;
+    left:0;
+}
+article{
+    margin: 50px;
+    height:100px;
+    width: 700px;
+    border:solid 1px orangered;
+    padding:0;
+    box-sizing: border-box;
+    background-color: rgb(60, 60, 60);
+    overflow: hidden;
+}
+h3{
+    color:rgb(235, 235, 235);
+    font-size: 40px;
+    width:550px;
+    text-align: center;
+    padding:25px;
+}
+#evart li{
+    float: left;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    list-style-type: none;
+    margin-top: -18px;
+    overflow:hidden;
+}
+button{
+    border-radius: 15px;
+}
+#buttoni{
+    margin-top:10px;
+    width:600px;
+    margin-left:100px;
+}
+#buttoni li{
+    display: block;
+    float: left;
+    overflow:hidden;
+    margin:10px 0px 10px 0px;
+}
+#buttoni li a{
+    margin:0;
+    padding:0;
+    background-color: rgb(235, 235, 235);
+    margin-top:-5px;
+    margin-bottom: -10px;
+}
+.klasabutton{
+    background-color: rgb(57, 57, 184);
+    color: white;
+    width:180px;
+    height: 40px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 30px;
+}
+#povratak{
+    color: rgb(60, 60, 60);
+    position: absolute;
+    left:20px;
+    bottom:20px;
+}
+#gotoprijava{
+    width:120px;
+    height:30px;
+    position: absolute;
+    top:75px;
+    right:60px;
+}
+table{
+    margin-left: 50px;
+    margin-top: 20px;
+    width:700px;
+    border: 1px solid rgb(60, 60, 60);
+    background-color: rgb(245, 245, 245);
+}
+.kratkith{
+    width:99px;
+    border: 1px solid rgb(60, 60, 60);
+}
+.dugith{
+    width:249px;
+    border: 1px solid rgb(60, 60, 60);
+}
+tr{
+    height:50px;
+    border: 1px solid rgb(60, 60, 60);
+}
+td{
+    border: 1px solid rgb(60, 60, 60);
+    text-align: center;
+    overflow: hidden;
+}
+main p{
+    margin:10px 50px 10px 50px;
+    color: rgb(30, 30, 30);
+}
+main p a{
+    color: orangered;
 }

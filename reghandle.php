@@ -21,6 +21,7 @@ $username = $_POST['username'];
 $lozinka = $_POST['password1'];
 $hashed_password = password_hash($lozinka, CRYPT_BLOWFISH);
 $razina = 0;
+$drzava = $_POST['drzava'];
 $sql = "SELECT username FROM korisnik WHERE username = ?";
 $stmt = mysqli_stmt_init($dbc);
 if (mysqli_stmt_prepare($stmt, $sql)) {
@@ -38,10 +39,10 @@ if(mysqli_stmt_num_rows($stmt) > 0){
         </script>';
     
 }else{
- $sql = "INSERT INTO korisnik (ime, prezime, email, datum, spol, username, password, razina)VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+ $sql = "INSERT INTO korisnik (ime, prezime, email, datum, spol, username, password, razina, idDrzava)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
  $stmt = mysqli_stmt_init($dbc);
  if (mysqli_stmt_prepare($stmt, $sql)) {
- mysqli_stmt_bind_param($stmt, 'sssssssi', $ime, $prezime, $email, $datumRod, $spol, $username, $hashed_password, $razina);
+ mysqli_stmt_bind_param($stmt, 'sssssssii', $ime, $prezime, $email, $datumRod, $spol, $username, $hashed_password, $razina, $drzava);
  mysqli_stmt_execute($stmt);
  }  
     echo'<script type="text/javascript">

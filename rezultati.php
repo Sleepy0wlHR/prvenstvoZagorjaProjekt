@@ -35,10 +35,11 @@
             </nav>
         </header>
         <main>
-            
+            <h1>Stranica u izradi</h1>
+            <h2>Hvala na strpljenju!</h2>
         </main>
         <footer>
-            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1</h6>
+            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1 TESTNA VERZIJA</h6>
         </footer>'
     ?>
     </body>

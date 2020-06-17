@@ -30,11 +30,14 @@ $(function() {
         },
         password1: {
           required: true,
-          minlength: 6,
+          minlength: 5,
         },
         password2:{
           required: true,
           equalTo: "#password1",
+        },
+        drzava: {
+          required: true,
         }
       },
       messages: {
@@ -71,6 +74,9 @@ $(function() {
           required: "Potrebno je ponoviti lozinku",
           equalTo: "Lozinke trebaju biti iste",
         },
+        drzava: {
+          required: "Obavezno je odabrati državu",
+      }
      },
       submitHandler: function(form) {
         form.submit();

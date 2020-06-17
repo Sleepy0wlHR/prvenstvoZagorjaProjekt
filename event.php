@@ -13,6 +13,7 @@
     <?php
     session_start();
     include 'connect.php';
+    $event = $_GET["id"];
         echo'<header>
             <div name="headerSlike" id="headerSlike">
                 <ul name="listaSlike" id="listaSlike">
@@ -25,7 +26,7 @@
             </div>
             <nav>
                 <ul name="navBar" id="navBar">
-                    <li><a class="currentOne" href="index.php">POČETNA</a></li>
+                    <li><a href="index.php">POČETNA</a></li>
                     <li><a href="utrke.php">UTRKE</a></li>
                     <li><a href="rezultati.php">REZULTATI</a></li>
                 </ul>';
@@ -42,24 +43,32 @@
                 }
             echo'</nav>
         </header>
-        <main>
-            <h1>Dobrodošli!</h1>
-            <h2>Uputstvo za korištenje:</h2>
-            <p>
-                Ukoliko ste prvi put na ovoj stranici, molim vas da se registrirate. Gumb za registraciju možete naći u gornjem desnom kutu stranice. 
-                Ako ste već registrirani, molim Vas da se prijavite. Gumb za prijavu je također u gornjem desnom kutu stranice. 
-                Morate biti prijavljeni na stranici da bi se mogli prijaviti na utrku. 
-            </p>
-            <p>
-                Na navigacijskom panelu na vrhu stranice možete vidjeti gumb "Utrke". Kada pritisnete na taj gumb, pokazat će vam se svi dostupni eventovi.
-                Kada izaberete event na koji se želite prijaviti, prikazat će vam se sve dostupne klase za taj event. Odabirom klase prikazat će vam se svi već prijavljeni
-                natjecatelji. Desno iznad tablice prijavljenih vidjet ćete plavi gumb "Prijava". Klikom na taj gumb otvorit će vam se kratka forma koju treba ispuniti. 
-                Nakon toga stisnite zeleni gumb "Prijava" i vaša prijava će biti zabilježena.
-            <p>
-                Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
-                stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
-                da istu prijavite na mail: ivan.sovec.1@gmail.com
-            </p>
+        <main>';
+            $query = "SELECT idEvent, datumEvent, slika, mjesto FROM event JOIN mjesto
+            ON event.idMjesto = mjesto.idMjesto WHERE idEvent = '$event'";
+            $result = mysqli_query($dbc, $query) or die("Greška u dohvatu!");
+            while($row = mysqli_fetch_array($result)){
+                echo'<h1>';
+                $date1 = strtotime($row["datumEvent"]);
+                $date2 = date('d.m.Y', $date1);
+                echo $date2;
+                echo ' - '.$row["mjesto"].'</h1>';
+            }
+        echo'<h2>Dostupne klase za prijavu:</h2> 
+        <ul id="buttoni">';
+                $query2 = "SELECT * FROM klasa JOIN klasezaevent ON 
+                            klasa.idKlasa = klasezaevent.idKlasa JOIN event ON
+                            klasezaevent.idEvent = event.idEvent WHERE klasezaevent.idEvent = '$event'
+                            AND aktivno=1";
+                $result2 = mysqli_query($dbc, $query2);
+                while($row = mysqli_fetch_array($result2)) {
+                    echo'<li><a href="eventklasa.php?id='.$row['idKZE'].'">
+                        <input type="button" class="klasabutton" id="'.$row['idKlasa'].'" name="'.$row['idKlasa'].'" 
+                        value="'.$row['naziv'].'">
+                        </a></li>';
+                }
+        echo'</ul><br>
+        <a id="povratak" href="utrke.php">Povratak</a>
         </main>
         <footer>
             <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1 TESTNA VERZIJA</h6>

@@ -14,7 +14,8 @@
         <script src=""></script> 
     </head>
     <body>
-    <?php 
+    <?php
+    session_start();
     include 'connect.php';
         echo '<header>
             <div name="headerSlike" id="headerSlike">

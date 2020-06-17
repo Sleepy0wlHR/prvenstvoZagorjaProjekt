@@ -77,6 +77,14 @@
                 <label for="password2">Ponovite lozinku:</label><br>
                 <input type="password" name="password2" id="password2" class="textfield">
             </div>
+            <div class="form-item">
+                <label for="drzava">Država:</label><br>
+                <select name="drzava" id="drzava">
+                    <option value="" disabled selected>Odaberi državu</option>
+                    <option value="1">Hrvatska</option>
+                    <option value="2">Slovenija</option>
+                </select>
+            </div>
             <div class="form-item" id="buttoni">
                 <button type="submit" value="Registracija" id="slanje">Registracija</button>
                 <button type="reset" value="Poništi" id="ponisti">Poništi</button>
@@ -84,7 +92,7 @@
         </form>
         </main>
         <footer>
-            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1</h6>
+            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1 TESTNA VERZIJA</h6>
         </footer>'
     ?>
     </body>

@@ -24,11 +24,11 @@ $prijavaLozinkaKorisnika = $_POST['password1'];
  mysqli_stmt_store_result($stmt);
  }
  mysqli_stmt_bind_result($stmt, $imeKorisnika, $lozinkaKorisnika,
-$levelKorisnika);
+$razinaKorisnika);
  mysqli_stmt_fetch($stmt);
  if (password_verify($_POST['password1'], $lozinkaKorisnika) && mysqli_stmt_num_rows($stmt) > 0) {
-    $_SESSION['$username'] = $imeKorisnika;
-    $_SESSION['$level'] = $levelKorisnika;
+    $_SESSION['username'] = $imeKorisnika;
+    $_SESSION['razina'] = $razinaKorisnika;
     echo'<script type="text/javascript">
         if(confirm("Uspješno ste se prijavili!")) {
             document.location = "index.php";
@@ -36,7 +36,7 @@ $levelKorisnika);
             document.location = "index.php";
         }
         </script>';
-} else if (!(password_verify($_POST['pass'], $lozinkaKorisnika)) && mysqli_stmt_num_rows($stmt) > 0) {
+} else if (!(password_verify($_POST['password1'], $lozinkaKorisnika)) && mysqli_stmt_num_rows($stmt) > 0) {
     echo'<script type="text/javascript">
     if(confirm("Neuspješna prijava, želite li pokušati ponovno?")) {
         document.location = "prijava.php";
