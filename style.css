@@ -240,29 +240,26 @@ table{
     border: 1px solid rgb(60, 60, 60);
     background-color: rgb(245, 245, 245);
 }
-.kratkith{
-    width:99px;
+th{
     border: 1px solid rgb(60, 60, 60);
+}
+.kratkith{
+    width:99px; 
 }
 .dugith{
     width:249px;
-    border: 1px solid rgb(60, 60, 60);
 }
 .vth{
     width:199px;
-    border: 1px solid rgb(60, 60, 60);
 }
 .sbth{
     width:84px;
-    border: 1px solid rgb(60, 60, 60);
 }
 .deleteth{
     width:74px;
-    border: 1px solid rgb(60, 60, 60);
 }
 .kth{
     width:139px;
-    border: 1px solid rgb(60, 60, 60);
 }
 tr{
     height:50px;
