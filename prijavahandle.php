@@ -7,7 +7,6 @@
         <meta name="description" content="Stranica za prijavu na utrke Prvenstva Zagorja">
         <meta name="keywords" content="Prvenstvo, Zagorja, Prijave, Kebel, Lobor, Breznica, Bedenica, Bedekovčina">
         <meta name="author" content="Ivan Sovec">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 <?php
@@ -23,6 +22,18 @@ $result = mysqli_query($dbc, $query) or die("Greška u dohvaćanju");
 $row = mysqli_fetch_array($result);
 $idKorisnik = $row["id"];
 
+$query2 = "SELECT * FROM prijava WHERE idKorisnik = '$idKorisnik' AND idKZE = '$idKZE'";
+$result2 = mysqli_query($dbc, $query2) or die("Greška u dohvaćanju");
+if(mysqli_num_rows($result2) > 0){
+    echo'<script type="text/javascript">
+        if(confirm("Prijava pod tim imenom već postoji!")) {
+            document.location = "index.php";
+        } else {
+            document.location = "index.php";
+        }
+        </script>';
+    
+}else{
  $sql = "INSERT INTO prijava (idKZE, idKorisnik, startniBroj, vozilo)VALUES (?, ?, ?, ?)";
  $stmt = mysqli_stmt_init($dbc);
  if (mysqli_stmt_prepare($stmt, $sql)) {
@@ -36,6 +47,7 @@ $idKorisnik = $row["id"];
         document.location = "eventklasa.php?id='.$idKZE.'";
     }
     </script>';
+}
 mysqli_close($dbc);
 ?>
 </body>

@@ -7,7 +7,6 @@
         <meta name="description" content="Stranica za prijavu na utrke Prvenstva Zagorja">
         <meta name="keywords" content="Prvenstvo, Zagorja, Prijave, Kebel, Lobor, Breznica, Bedenica, Bedekovčina">
         <meta name="author" content="Ivan Sovec">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="jquery-1.11.0.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
@@ -31,18 +30,20 @@
             <nav>
                 <ul name="navBar" id="navBar">
                     <li><a href="index.php">POČETNA</a></li>
-                    <li><a href="utrke.php">UTRKE</a></li>
-                    <li><a href="rezultati.php">REZULTATI</a></li>
-                </ul>';
-                if(isset($_SESSION['username'])){
-                    echo'<div name="logreg" id="logreg">
+                    <li><a class="currentOne" href="utrke.php">UTRKE</a></li>
+                    <li><a href="rezultati.php">REZULTATI</a></li>';
+                    if(isset($_SESSION['username'])){
+                        echo'<li><a href="user.php">MOJE PRIJAVE</a></li>
+                </ul>
+                <div name="logreg" id="logreg">
                     <h5>'.$_SESSION['username'].'</h5>
-                    <h5><a href="logout.php">Log out</a></h5>
+                    <h5><a href="logout.php">Logout</a></h5>
                     </div>';
                 } else {
-                echo'<div name="logreg" id="logreg">
-                    <h5><a href="login.php">Prijava</a></h5>
-                    <h5><a href="registracija.php">Registracija</a></h5>
+                echo'</ul>
+                    <div name="logreg" id="logreg">
+                    <h5><a href="login.php">Login</a></h5>
+                    <h5><a href="registracija.php">Register</a></h5>
                 </div>';
                 }
             echo'</nav>

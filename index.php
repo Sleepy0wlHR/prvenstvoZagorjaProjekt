@@ -7,7 +7,6 @@
         <meta name="description" content="Stranica za prijavu na utrke Prvenstva Zagorja">
         <meta name="keywords" content="Prvenstvo, Zagorja, Prijave, Kebel, Lobor, Breznica, Bedenica, Bedekovčina">
         <meta name="author" content="Ivan Sovec">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
     <?php
@@ -27,17 +26,19 @@
                 <ul name="navBar" id="navBar">
                     <li><a class="currentOne" href="index.php">POČETNA</a></li>
                     <li><a href="utrke.php">UTRKE</a></li>
-                    <li><a href="rezultati.php">REZULTATI</a></li>
-                </ul>';
-                if(isset($_SESSION['username'])){
-                    echo'<div name="logreg" id="logreg">
+                    <li><a href="rezultati.php">REZULTATI</a></li>';
+                    if(isset($_SESSION['username'])){
+                        echo'<li><a href="user.php">MOJE PRIJAVE</a></li>
+                </ul>
+                <div name="logreg" id="logreg">
                     <h5>'.$_SESSION['username'].'</h5>
-                    <h5><a href="logout.php">Log out</a></h5>
+                    <h5><a href="logout.php">Logout</a></h5>
                     </div>';
                 } else {
-                echo'<div name="logreg" id="logreg">
-                    <h5><a href="login.php">Prijava</a></h5>
-                    <h5><a href="registracija.php">Registracija</a></h5>
+                echo'</ul>
+                    <div name="logreg" id="logreg">
+                    <h5><a href="login.php">Login</a></h5>
+                    <h5><a href="registracija.php">Register</a></h5>
                 </div>';
                 }
             echo'</nav>
@@ -45,6 +46,10 @@
         <main>
             <h1>Dobrodošli!</h1>
             <h2>Uputstvo za korištenje:</h2>
+            <p>
+                Važno!<br>
+                Molim vas da koristite novije web browsere poput Google Chrome-a, Opere i sl. da bi se stranica prikazala ispravno.
+            </p>
             <p>
                 Ukoliko ste prvi put na ovoj stranici, molim vas da se registrirate. Gumb za registraciju možete naći u gornjem desnom kutu stranice. 
                 Ako ste već registrirani, molim Vas da se prijavite. Gumb za prijavu je također u gornjem desnom kutu stranice. 
@@ -55,6 +60,7 @@
                 Kada izaberete event na koji se želite prijaviti, prikazat će vam se sve dostupne klase za taj event. Odabirom klase prikazat će vam se svi već prijavljeni
                 natjecatelji. Desno iznad tablice prijavljenih vidjet ćete plavi gumb "Prijava". Klikom na taj gumb otvorit će vam se kratka forma koju treba ispuniti. 
                 Nakon toga stisnite zeleni gumb "Prijava" i vaša prijava će biti zabilježena.
+            </p>
             <p>
                 Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
                 stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 

@@ -7,7 +7,6 @@
         <meta name="description" content="Stranica za prijavu na utrke Prvenstva Zagorja">
         <meta name="keywords" content="Prvenstvo, Zagorja, Prijave, Kebel, Lobor, Breznica, Bedenica, Bedekovčina">
         <meta name="author" content="Ivan Sovec">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 <?php

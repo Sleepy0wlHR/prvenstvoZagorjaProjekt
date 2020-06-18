@@ -7,7 +7,6 @@
         <meta name="description" content="Stranica za prijavu na utrke Prvenstva Zagorja">
         <meta name="keywords" content="Prvenstvo, Zagorja, Prijave, Kebel, Lobor, Breznica, Bedenica, Bedekovčina">
         <meta name="author" content="Ivan Sovec">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 <?php
@@ -23,8 +22,7 @@ $prijavaLozinkaKorisnika = $_POST['password1'];
  mysqli_stmt_execute($stmt);
  mysqli_stmt_store_result($stmt);
  }
- mysqli_stmt_bind_result($stmt, $imeKorisnika, $lozinkaKorisnika,
-$razinaKorisnika);
+ mysqli_stmt_bind_result($stmt, $imeKorisnika, $lozinkaKorisnika, $razinaKorisnika);
  mysqli_stmt_fetch($stmt);
  if (password_verify($_POST['password1'], $lozinkaKorisnika) && mysqli_stmt_num_rows($stmt) > 0) {
     $_SESSION['username'] = $imeKorisnika;
@@ -39,7 +37,7 @@ $razinaKorisnika);
 } else if (!(password_verify($_POST['password1'], $lozinkaKorisnika)) && mysqli_stmt_num_rows($stmt) > 0) {
     echo'<script type="text/javascript">
     if(confirm("Neuspješna prijava, želite li pokušati ponovno?")) {
-        document.location = "prijava.php";
+        document.location = "login.php";
     } else {
         document.location = "index.php";
     }

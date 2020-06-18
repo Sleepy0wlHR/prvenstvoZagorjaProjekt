@@ -7,10 +7,10 @@
         <meta name="description" content="Stranica za prijavu na utrke Prvenstva Zagorja">
         <meta name="keywords" content="Prvenstvo, Zagorja, Prijave, Kebel, Lobor, Breznica, Bedenica, Bedekovčina">
         <meta name="author" content="Ivan Sovec">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
     <?php
+    session_start();
     include 'connect.php'; 
         echo '<header>
             <div name="headerSlike" id="headerSlike">
@@ -26,13 +26,22 @@
                 <ul name="navBar" id="navBar">
                     <li><a href="index.php">POČETNA</a></li>
                     <li><a href="utrke.php">UTRKE</a></li>
-                    <li><a class="currentOne" href="rezultati.php">REZULTATI</a></li>
+                    <li><a class="currentOne" href="rezultati.php">REZULTATI</a></li>';
+                    if(isset($_SESSION['username'])){
+                        echo'<li><a href="user.php">MOJE PRIJAVE</a></li>
                 </ul>
                 <div name="logreg" id="logreg">
-                    <h5><a href="login.php">Prijava</a></h5>
-                    <h5><a href="registracija.php">Registracija</a></h5>
-                </div>
-            </nav>
+                    <h5>'.$_SESSION['username'].'</h5>
+                    <h5><a href="logout.php">Logout</a></h5>
+                    </div>';
+                } else {
+                echo'</ul>
+                    <div name="logreg" id="logreg">
+                    <h5><a href="login.php">Login</a></h5>
+                    <h5><a href="registracija.php">Register</a></h5>
+                </div>';
+                }
+            echo'</nav>
         </header>
         <main>
             <h1>Stranica u izradi</h1>

@@ -36,12 +36,12 @@ ul{
     width:200px;
     height:40px;
     position: relative;
-    margin-left: 1300px;
+    margin-left: 1200px;
 }
 #logreg h5{
     float: left;
     padding: 10px;
-    width:55px;
+    width:60px;
     color: white;
     overflow: hidden;
 }
@@ -248,6 +248,22 @@ table{
     width:249px;
     border: 1px solid rgb(60, 60, 60);
 }
+.vth{
+    width:199px;
+    border: 1px solid rgb(60, 60, 60);
+}
+.sbth{
+    width:84px;
+    border: 1px solid rgb(60, 60, 60);
+}
+.deleteth{
+    width:74px;
+    border: 1px solid rgb(60, 60, 60);
+}
+.kth{
+    width:139px;
+    border: 1px solid rgb(60, 60, 60);
+}
 tr{
     height:50px;
     border: 1px solid rgb(60, 60, 60);
@@ -263,4 +279,7 @@ main p{
 }
 main p a{
     color: orangered;
+}
+.izbrisi{
+    color: rgb(30, 30, 30);
 }
