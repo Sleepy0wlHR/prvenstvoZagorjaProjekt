@@ -63,9 +63,16 @@
             while($row = mysqli_fetch_array($result2)){
                 echo'<h2>'.$row["naziv"].'</h2>';
             }
-            echo'<a href="prijava.php?id='.$idKZE.'">
+                    echo'<div id="evkbuttons">
+                        <ul id="evklist">
+                        <li><a href="pdfgenerator.php?id='.$idKZE.'">
+                        <input type="button" class="klasabutton" id="pdfgen" name="pdfgen" value="Preuzmi PDF">
+                        </a></li>
+                        <li><a href="prijava.php?id='.$idKZE.'">
                         <input type="button" class="klasabutton" id="gotoprijava" name="gotoprijava" value="Prijava">
-                        </a>
+                        </a></li>
+                        </ul>
+                        </div>
             <table>
                 <tr>
                     <th class="kratkith">Država</th>

@@ -41,11 +41,7 @@ if(mysqli_num_rows($result2) > 0){
  mysqli_stmt_execute($stmt);
  }  
     echo'<script type="text/javascript">
-    if(confirm("Uspješno ste se prijavili za utrku!")) {
         document.location = "eventklasa.php?id='.$idKZE.'";
-    } else {
-        document.location = "eventklasa.php?id='.$idKZE.'";
-    }
     </script>';
 }
 mysqli_close($dbc);

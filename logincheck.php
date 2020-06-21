@@ -28,11 +28,7 @@ $prijavaLozinkaKorisnika = $_POST['password1'];
     $_SESSION['username'] = $imeKorisnika;
     $_SESSION['razina'] = $razinaKorisnika;
     echo'<script type="text/javascript">
-        if(confirm("Uspješno ste se prijavili!")) {
             document.location = "index.php";
-        } else {
-            document.location = "index.php";
-        }
         </script>';
 } else if (!(password_verify($_POST['password1'], $lozinkaKorisnika)) && mysqli_stmt_num_rows($stmt) > 0) {
     echo'<script type="text/javascript">
