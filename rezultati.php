@@ -11,6 +11,7 @@
     <body>
     <?php
     session_start();
+    define("UPLPATH", "img/"); 
     include 'connect.php'; 
         echo '<header>
             <div name="headerSlike" id="headerSlike">
@@ -44,11 +45,27 @@
             echo'</nav>
         </header>
         <main>
-            <h1>Stranica u izradi</h1>
-            <h2>Hvala na strpljenju!</h2>
-        </main>
+        <h1> Završene utrke </h1>';
+        $query = "SELECT idEvent, datumEvent, slika, mjesto FROM event JOIN mjesto
+                ON event.idMjesto = mjesto.idMjesto WHERE event.aktivnost=0";
+        $result = mysqli_query($dbc, $query) or die("Greška u dohvatu!");
+        while($row = mysqli_fetch_array($result)){
+            echo '<article>';
+                echo '<a href="eventrezultat.php?id='.$row['idEvent'].'">';
+                echo '<ul id="evart">';
+                echo '<li><img class="uimg" src="'. UPLPATH . $row['slika'] . '"></li>';
+                echo '<li><h3>';
+                $date1 = strtotime($row["datumEvent"]);
+                $date2 = date('d.m.Y', $date1);
+                echo $date2;
+                echo ' - '.$row["mjesto"];
+                echo '</h3></li>
+                </a>
+                </article>';
+        }
+    echo'</main>
         <footer>
-            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1 TESTNA VERZIJA</h6>
+            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.2 TESTNA VERZIJA</h6>
         </footer>'
     ?>
     </body>

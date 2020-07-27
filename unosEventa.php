@@ -83,7 +83,7 @@
         </form>
         </main>
         <footer>
-            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1</h6>
+            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.2 TESTNA VERZIJA</h6>
         </footer>'
     ?>
     </body>

@@ -42,10 +42,11 @@ $content .= '<h2>'.$klasa.'</h2>';
 $content .= '  
 <table border="1" cellspacing="0" cellpadding="3">  
 <tr>  
-<th width="10%">Država</th>
-<th width="30%">Ime</th>
-<th width="30%">Vozilo</th>
-<th width="15%">Startni broj</th>
+<th width="8%">Država</th>
+<th width="26%">Ime</th>
+<th width="25%">Vozilo</th>
+<th width="11%">Startni broj</th>
+<th width="15%">Transponder</th>  
 <th width="15%">Potpis</th>  
 </tr>  ';
 $sql = "SELECT prijava.startniBroj, prijava.vozilo, korisnik.ime, korisnik.prezime, drzava.drzava FROM prijava 
@@ -59,6 +60,7 @@ $content .= '<tr>
 <td>'.$row["ime"].' '.$row["prezime"].'</td>
 <td>'.$row["vozilo"].'</td>
 <td>'.$row["startniBroj"].'</td>
+<td></td>
 <td></td>
 </tr>';  
 }  

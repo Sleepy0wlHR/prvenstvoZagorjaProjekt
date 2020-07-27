@@ -212,7 +212,7 @@ button{
     margin-bottom: -10px;
 }
 .klasabutton{
-    background-color: rgb(57, 57, 184);
+    background-color: rgb(25, 25, 25);
     color: white;
     width:180px;
     height: 40px;
@@ -295,4 +295,10 @@ main p a{
 }
 .izbrisi{
     color: rgb(30, 30, 30);
+}
+.pdficon{
+    height:50px;
+    width:50px;
+    margin-top: 5px;
+    margin-left:20px;
 }

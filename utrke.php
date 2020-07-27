@@ -12,7 +12,7 @@
     <?php
     session_start();
     include 'connect.php';
-    define("UPLPATH", "img/"); 
+    define("UPLPATH", "img/");
         echo '<header>
             <div name="headerSlike" id="headerSlike">
                 <ul name="listaSlike" id="listaSlike">
@@ -47,7 +47,7 @@
         <main>
             <h1> Nadolazeće utrke </h1>';
             $query = "SELECT idEvent, datumEvent, slika, mjesto FROM event JOIN mjesto
-                    ON event.idMjesto = mjesto.idMjesto";
+                    ON event.idMjesto = mjesto.idMjesto WHERE event.aktivnost=1";
             $result = mysqli_query($dbc, $query) or die("Greška u dohvatu!");
             while($row = mysqli_fetch_array($result)){
                 echo '<article>';
@@ -65,7 +65,7 @@
             }
         echo'</main>
         <footer>
-            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.1 TESTNA VERZIJA</h6>
+            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.2 TESTNA VERZIJA</h6>
         </footer>'
     ?>
     </body>
