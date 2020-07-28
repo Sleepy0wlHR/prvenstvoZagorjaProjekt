@@ -13,15 +13,7 @@
     session_start();
     include 'connect.php';
         echo'<header>
-            <div name="headerSlike" id="headerSlike">
-                <ul name="listaSlike" id="listaSlike">
-                    <li><img class="hSlike" src="img/mx1.jpg"></li>
-                    <li><img class="hSlike" src="img/quad.jpg"></li>
-                    <li><img class="hSlike" src="img/autocross.jpg"></li>
-                    <li><img class="hSlike" src="img/buggy.jpg"></li>
-                    <li><img class="hSlike" src="img/mx2.jpg"></li>
-                </ul>
-            </div>
+            
             <nav>
                 <ul name="navBar" id="navBar">
                     <li><a class="currentOne" href="index.php">POČETNA</a></li>
@@ -66,6 +58,7 @@
                 stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
                 da istu prijavite na mail: ivan.sovec.1@gmail.com
             </p>
+            
         </main>
         <footer>
             <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.2 TESTNA VERZIJA</h6>

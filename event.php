@@ -14,15 +14,6 @@
     include 'connect.php';
     $event = $_GET["id"];
         echo'<header>
-            <div name="headerSlike" id="headerSlike">
-                <ul name="listaSlike" id="listaSlike">
-                    <li><img class="hSlike" src="img/mx1.jpg"></li>
-                    <li><img class="hSlike" src="img/quad.jpg"></li>
-                    <li><img class="hSlike" src="img/autocross.jpg"></li>
-                    <li><img class="hSlike" src="img/buggy.jpg"></li>
-                    <li><img class="hSlike" src="img/mx2.jpg"></li>
-                </ul>
-            </div>
             <nav>
                 <ul name="navBar" id="navBar">
                     <li><a href="index.php">POČETNA</a></li>

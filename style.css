@@ -2,13 +2,18 @@
     margin:0;
     padding:0;
 }
+html{
+    background: url("img/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
 body{
     width:1500px;
     margin:0 auto;
+    
 }
 header{
     width:100%;
-    height:240px;
+    height:50px;
 }
 #headerSlike{
     width:1500px;
@@ -24,6 +29,7 @@ nav{
     width:1500px;
     height:40px;
     background-color: orangered;
+    border-radius: 50px;
 }
 ul{
     list-style-type: none;
@@ -58,20 +64,20 @@ li a {
 }
 li a:hover {
     display: block;
-    background-color: white;
+    background-color: black;
     color: orangered;
 }
 main{
     width: 800px;
     height: 100%;
     margin:0 auto;
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(60, 60, 60, 0.8);
     position: relative;
     overflow: hidden;
     margin-top: 20px;
+    margin-bottom: 50px;
     border:solid 1px rgb(215, 215, 215);
     padding: 10px 20px 50px 20px;
-    
 }
 hr{
     margin-left: 2%;
@@ -86,12 +92,13 @@ footer{
     overflow: hidden;
     width:1500px;
     height:50px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
+    border-radius: 30px;
 }
 h1{
-    color: rgb(100, 100, 100);
+    color: white;
     text-align: center;
 }
 h2{
@@ -112,7 +119,7 @@ a{
     padding-right: 10px;
 }
 .currentOne{
-    background-color: white;
+    background-color: black;
     color:orangered;
 }
 form{
@@ -128,12 +135,14 @@ form{
 #slanje{
     width: 120px;
     height: 30px;
-    background-color: palegreen;
+    background-color: orangered;
+    color:white;
 }
 #ponisti{
     width: 120px;
     height: 30px;
-    background-color: tomato;
+    background-color: rgb(25, 25, 25);
+    color: white;
 }
 #buttoni{
     margin-left: 127px;
@@ -147,6 +156,9 @@ form input {
     color: #000;
     padding: 0 6px;
     box-sizing: border-box;
+}
+form label{
+    color: white;
 }
 input[type="checkbox"]
 {
@@ -171,7 +183,7 @@ article{
     border:solid 1px orangered;
     padding:0;
     box-sizing: border-box;
-    background-color: rgb(60, 60, 60);
+    background-color: rgb(30, 30, 30);
     overflow: hidden;
 }
 h3{
@@ -207,10 +219,11 @@ button{
 #buttoni li a{
     margin:0;
     padding:0;
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(235, 235, 235, 0);
     margin-top:-5px;
     margin-bottom: -10px;
 }
+
 .klasabutton{
     background-color: rgb(25, 25, 25);
     color: white;
@@ -223,21 +236,21 @@ button{
 #evklist{
     width:400px;
     height:50px;
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(235, 235, 235, 0);
     margin-top:5px;
 }
 #evklist li{
     float:left;
     width:200px;
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(235, 235, 235, 0);
     padding:0px;
 }
 #evklist li a{
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(235, 235, 235, 0);
     padding:0px;
 }
 #povratak{
-    color: rgb(60, 60, 60);
+    color: white;
     position: absolute;
     left:20px;
     bottom:20px;
@@ -254,7 +267,8 @@ table{
     margin-top: 50px;
     width:700px;
     border: 1px solid rgb(60, 60, 60);
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(30, 30, 30);
+    color: white;
 }
 th{
     border: 1px solid rgb(60, 60, 60);
@@ -288,13 +302,13 @@ td{
 }
 main p{
     margin:10px 50px 10px 50px;
-    color: rgb(30, 30, 30);
+    color: white
 }
 main p a{
     color: orangered;
 }
 .izbrisi{
-    color: rgb(30, 30, 30);
+    color: white;
 }
 .pdficon{
     height:50px;
