@@ -16,7 +16,8 @@
                 <ul name="navBar" id="navBar">
                     <li><a href="index.php">POČETNA</a></li>
                     <li><a href="utrke.php">UTRKE</a></li>
-                    <li><a href="rezultati.php">REZULTATI</a></li>';
+                    <li><a href="rezultati.php">REZULTATI</a></li>
+                    <li><a href="pravilnici.php">PRAVILNICI</a></li>';
                     if(isset($_SESSION['username'])){
                         echo'<li><a href="user.php">MOJE PRIJAVE</a></li>
                 </ul>
@@ -49,10 +50,8 @@
                     <button type="reset" value="Poništi" id="ponisti">Poništi</button>
                 </div>
             </form>
-        </main>
-        <footer>
-            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.2 TESTNA VERZIJA</h6>
-        </footer>'
+        </main>';
+        require 'footer.php';
     ?>
     </body>
 </html>

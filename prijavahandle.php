@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Prvenstvo Zagorja</title>
+        <title>Prvenstvo Zagorja</title>
         <link type="text/css" rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
         <meta name="description" content="Stranica za prijavu na utrke Prvenstva Zagorja">

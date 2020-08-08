@@ -12,30 +12,8 @@
     <?php
     session_start();
     include 'connect.php';
-        echo'<header>
-            
-            <nav>
-                <ul name="navBar" id="navBar">
-                    <li><a class="currentOne" href="index.php">POČETNA</a></li>
-                    <li><a href="utrke.php">UTRKE</a></li>
-                    <li><a href="rezultati.php">REZULTATI</a></li>';
-                    if(isset($_SESSION['username'])){
-                        echo'<li><a href="user.php">MOJE PRIJAVE</a></li>
-                </ul>
-                <div name="logreg" id="logreg">
-                    <h5>'.$_SESSION['username'].'</h5>
-                    <h5><a href="logout.php">Logout</a></h5>
-                    </div>';
-                } else {
-                echo'</ul>
-                    <div name="logreg" id="logreg">
-                    <h5><a href="login.php">Login</a></h5>
-                    <h5><a href="registracija.php">Register</a></h5>
-                </div>';
-                }
-            echo'</nav>
-        </header>
-        <main>
+    require 'header.php';
+        echo'<main>
             <h1>Dobrodošli!</h1>
             <h2>Uputstvo za korištenje:</h2>
             <p>
@@ -50,19 +28,16 @@
             <p>
                 Na navigacijskom panelu na vrhu stranice možete vidjeti gumb "Utrke". Kada pritisnete na taj gumb, pokazat će Vam se svi dostupni eventovi.
                 Kada izaberete event na koji se želite prijaviti, prikazat će Vam se sve dostupne klase za taj event. Odabirom klase prikazat će Vam se svi već prijavljeni
-                natjecatelji. Desno iznad tablice prijavljenih vidjet ćete plavi gumb "Prijava". Klikom na taj gumb otvorit će Vam se kratka forma koju treba ispuniti. 
-                Nakon toga stisnite zeleni gumb "Prijava" i Vaša prijava će biti zabilježena.
+                natjecatelji. Desno iznad tablice prijavljenih vidjet ćete tamno-sivi gumb "Prijava". Klikom na taj gumb otvorit će Vam se kratka forma koju treba ispuniti. 
+                Nakon toga stisnite narančasti gumb "Prijava" i Vaša prijava će biti zabilježena.
             </p>
             <p>
                 Ova web aplikacija za prijave je amatersko-volonterski rad jedne osobe u slobodno vrijeme,
                 stoga Vas molim da ukoliko primjetite bilo kakvu nepravilnost u radu stranice, 
                 da istu prijavite na mail: ivan.sovec.1@gmail.com
             </p>
-            
-        </main>
-        <footer>
-            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.2 TESTNA VERZIJA</h6>
-        </footer>'
+            </main>';
+    require 'footer.php';
     ?>
     </body>
 </html>

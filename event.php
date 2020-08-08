@@ -18,7 +18,8 @@
                 <ul name="navBar" id="navBar">
                     <li><a href="index.php">POČETNA</a></li>
                     <li><a class="currentOne" href="utrke.php">UTRKE</a></li>
-                    <li><a href="rezultati.php">REZULTATI</a></li>';
+                    <li><a href="rezultati.php">REZULTATI</a></li>
+                    <li><a href="pravilnici.php">PRAVILNICI</a></li>';
                     if(isset($_SESSION['username'])){
                         echo'<li><a href="user.php">MOJE PRIJAVE</a></li>
                 </ul>
@@ -54,17 +55,15 @@
                             AND aktivno=1";
                 $result2 = mysqli_query($dbc, $query2);
                 while($row = mysqli_fetch_array($result2)) {
-                    echo'<li><a href="eventklasa.php?id='.$row["idKZE"].'">
+                    echo'<li><a class="roundlink" href="eventklasa.php?id='.$row["idKZE"].'">
                         <input type="button" class="klasabutton" id="'.$row["idKlasa"].'" name="'.$row["idKlasa"].'" 
                         value="'.$row['naziv'].'">
                         </a></li>';
                 }
         echo'</ul><br>
         <a id="povratak" href="utrke.php">Povratak</a>
-        </main>
-        <footer>
-            <h6>Copyright: Prvenstvo Zagorja 2020 / Autor: Ivan Sovec / v0.2 TESTNA VERZIJA</h6>
-        </footer>'
+        </main>';
+        require 'footer.php';
     ?>
     </body>
 </html>

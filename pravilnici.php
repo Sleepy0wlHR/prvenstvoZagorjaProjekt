@@ -11,15 +11,15 @@
     <body>
     <?php
     session_start();
-    include 'connect.php';
     define("UPLPATH", "img/");
-        echo '<header>
+    include 'connect.php';
+    echo'<header>
             <nav>
                 <ul name="navBar" id="navBar">
                     <li><a href="index.php">POČETNA</a></li>
-                    <li><a class="currentOne" href="utrke.php">UTRKE</a></li>
+                    <li><a href="utrke.php">UTRKE</a></li>
                     <li><a href="rezultati.php">REZULTATI</a></li>
-                    <li><a href="pravilnici.php">PRAVILNICI</a></li>';
+                    <li><a class="currentOne" href="pravilnici.php">PRAVILNICI</a></li>';
                     if(isset($_SESSION['username'])){
                         echo'<li><a href="user.php">MOJE PRIJAVE</a></li>
                 </ul>
@@ -37,26 +37,25 @@
             echo'</nav>
         </header>
         <main>
-            <h1> Nadolazeće utrke </h1>';
-            $query = "SELECT idEvent, datumEvent, slika, mjesto FROM event JOIN mjesto
-                    ON event.idMjesto = mjesto.idMjesto WHERE event.aktivnost=1";
-            $result = mysqli_query($dbc, $query) or die("Greška u dohvatu!");
-            while($row = mysqli_fetch_array($result)){
-                echo '<article>';
-                    echo '<a href="event.php?id='.$row['idEvent'].'">';
-                    echo '<ul id="evart">';
-                    echo '<li><img class="uimg" src="'. UPLPATH . $row['slika'] . '"></li>';
-                    echo '<li><h3>';
-                    $date1 = strtotime($row["datumEvent"]);
-                    $date2 = date('d.m.Y', $date1);
-                    echo $date2;
-                    echo ' - '.$row["mjesto"];
-                    echo '</h3></li>
-                    </a>
-                    </article>';
-            }
-        echo'</main>';
-        require 'footer.php';
+            <h1>Pravilnici</h1>
+            <h2>Mopedcross</h2>
+            <div class="pravilnici">
+            <a href="pravilnici/mopedcross.pdf"><img class="pdficon"src="'. UPLPATH . 'pdficon.png"><h4>Mopedcross.pdf</h4></a>
+            </div>
+            <h2>MX/Quad</h2>
+            <div class="pravilnici">
+            <a href="pravilnici/mxquad.pdf"><img class="pdficon"src="'. UPLPATH . 'pdficon.png"><h4>MXandQuad.pdf</h4></a>
+            </div>
+            <h2>Autocross</h2>
+            <div class="pravilnici">
+            <a href="pravilnici/autocross.pdf"><img class="pdficon"src="'. UPLPATH . 'pdficon.png"><h4>Autocross.pdf</h4></a>
+            </div>
+            <h2>Buggycross</h2>
+            <div class="pravilnici">
+            <a href="pravilnici/buggy.pdf"><img class="pdficon"src="'. UPLPATH . 'pdficon.png"><h4>Buggycross.pdf</h4></a>
+            </div>
+            </main>';
+    require 'footer.php';
     ?>
     </body>
 </html>
